@@ -1,0 +1,16 @@
+html{
+    background:white;
+}
+.container
+{
+    display:grid;
+    grid-auto-columns: minmax(15 rem,auto);
+  grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
+  grid-gap:1rem;
+}  
+.item{
+    background: white;
+    border: 3px solid black;
+    padding: 2rem;
+    font-size: 2rem;
+}
