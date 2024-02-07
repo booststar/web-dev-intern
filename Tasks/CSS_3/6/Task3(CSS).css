@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffe6;
+    position: relative;
+}
+
+body::before
+{
+	content: '';
+	position: absolute;
+	height:100%;
+	width: 100%;
+	background: pink;
+	clip-path:inset(47% 0 0 0);
+	z-index:-1;
+}
+                                      
+.image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: #00bfff;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.container 
+{
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    padding: 30px;
+    border-radius: 30px;
+    justify-content:space-between;
+    transition:all 1s ease; 
+
+}
+
+
+.container .all_cards
+{
+	display: flex;
+	justify-content:space-between;
+}
+
+
+
+.container .card {
+    background-color: rgb(102, 255, 102); /* Green color */
+    width: 300px;
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container2
+{
+	margin-left: 8px;
+	transition:all 0.4s ease;
+}
+
+.media-icons {
+    display: flex;
+    margin-top: 10px;
+}
+
+.media-icons a {
+    background: #00bfff;
+    width: 35px;
+    height: 35px;
+    margin-left: 7px;
+    text-align: center;
+    border-radius: 50%; 
+    line-height: 35px; 
+    font-size: 20px; 
+    color: white; 
+    radius:2px solid transparent;
+}
+
+
+.media-icons a:hover
+{
+	border:2px solid  rgb(102, 255, 102);
+	color: red;
+	background: white;
+}
+
+.button
+{
+	display: flex;
+	margin: 20px;
+	justify-content:center;
+}
+
+
+.button label
+{
+	height:15px;
+	width:15px;
+	background: red;
+	margin: 0 4px;
+	border-radius: 25px	;
+}
+
+.button label.active
+{
+	width: 35px;
+}
+
+
+#one:checked ~ .button label.one 
+{
+	width:35px;
+}
+
+
+#two:checked ~ .button label.two 
+{
+	width:35px;
+}
+
+#two:checked ~ .button label.one
+{
+	width: 15px;
+}
+
+#one:checked ~ .button label.two
+{
+	width: 15px;
+}
+
+
+#two:checked ~ .container
+{
+	margin-left: -100%;
+}
+
+
+input[type="radio"]
+{
+	display: none;
+}
+
+
+.container2:hover
+{
+	transform:translateY(-15px);
+}
+
+@media (max-width: 768px)
+{
+    .container .all_cards
+    {
+        width: 100%;
+        margin: 20px 0 10px 0;
+    }
+}
