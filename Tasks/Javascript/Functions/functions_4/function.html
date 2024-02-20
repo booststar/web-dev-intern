@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JS</title>
+</head>
+<body>
+    <script>
+    //************************Named Functions***************************************
+        console.log("Named Function");
+        //Function 1 
+        //Temperature Conversion from C to F
+        function temp_conv(c){
+            let f=((c*9.0/5.0)+32.0);
+            console.log("Fahrenheit temperature for "+c+": " +f);
+        }
+        temp_conv(32);
+
+        //Function 2 
+        //Odd even number
+        function odd_even(n){
+            (n%2==0)?console.log("Even Number"):console.log("Odd Number");
+        }
+        odd_even(345);
+        odd_even(234);
+
+        //Function 3
+        //Factorial Number
+        function fact(n){
+            let f=1;
+            for(let i=1;i<=n;i++){
+                f=f*i;
+            }
+            console.log("Factorial of "+n+": "+f);
+        }
+        fact(9);
+    //************************Named Functions ***************************************
+
+    //************************Anonymous Function*************************************
+        console.log("Anonymous Function");
+        //Function 1
+        //Temperature Conversion from C to F
+        let temp=function(c){
+            let f=((c*9.0/5.0)+32.0);
+            console.log("Fahrenheit temperature for "+c+": " +f);
+        }
+        temp(72);
+
+        //Function 2 
+        //Odd even number
+        let even_odd=function(n){
+            (n%2==0)?console.log("Even Number"):console.log("Odd Number");
+        }
+        even_odd(896);
+        even_odd(905);
+
+        //Function 3
+        //Factorial Number
+        let factorial=function(n){
+            let f=1;
+            for(let i=1;i<=n;i++){
+                f=f*i;
+            }
+            console.log("Factorial of "+n+": "+f);
+        }
+        factorial(7);
+    //************************Anonymous Function*************************************
+
+    //*************************ARROW Function****************************************
+        console.log("ARROW Function");
+        //Function 1
+        //Temperature Conversion from C to F
+        temp=(c)=>{
+            let f=((c*9.0/5.0)+32.0);
+            console.log("Fahrenheit temperature for "+c+": " +f);
+        }
+        temp(20.5);
+
+        //Function 2 
+        //Odd even number
+        even_odd=(n)=>{
+            (n%2==0)?console.log("Even Number"):console.log("Odd Number");
+        }
+        even_odd(78);
+
+        //Function 3
+        //Factorial Number
+        factorial=(n)=>{
+            let f=1;
+            for(let i=1;i<=n;i++){
+                f=f*i;
+            }
+            console.log("Factorial of "+n+": "+f);
+        }
+        factorial(5);
+    //*************************ARROW Function****************************************
+
+    //*********************IIFE(Immediately Invoked Function Expression)************** 
+        console.log("IIFE Function");
+        //Function 1
+        //Temperature Conversion from C to F
+        temp=function(c){
+            let f=((c*9.0/5.0)+32.0);
+            console.log("Fahrenheit temperature for "+c+": " +f);
+        }(45);
+
+        //Function 2 
+        //Odd even number
+        even_odd=function(n){
+            (n%2==0)?console.log("Even Number"):console.log("Odd Number");
+        }(13);
+
+        //Function 3
+        //Factorial Number
+        factorial=function(n){
+            let f=1;
+            for(let i=1;i<=n;i++){
+                f=f*i;
+            }
+            console.log("Factorial of "+n+": "+f);
+        }(10);
+    //*********************IIFE(Immediately Invoked Function Expression)************** 
+    </script>
+</body>
+</html>

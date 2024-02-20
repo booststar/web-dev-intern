@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js functions</title>
+</head>
+<body>
+    <script>
+        //Name function
+        function sayHello() {
+            console.log("Hello!");
+          }
+          
+          
+          console.log(sayHello.name); 
+          //Anonymous function
+          setTimeout(function() {
+            console.log("This is an anonymous function used as a callback.");
+          }, 1000);
+          (function() {
+            console.log("This is an immediately invoked anonymous function.");
+          })();
+          var greet = function(name) {
+            console.log("Hello, " + name + "!");
+          };
+          
+          greet("John"); 
+          //Arrow Function
+          const add = (a, b) => {
+            return a + b;
+          };
+          
+          console.log(add(3, 5)); 
+          const multiply = (a, b) => a * b;
+
+         console.log(multiply(4, 6)); 
+         function Counter() {
+            this.count = 0;
+          
+            setInterval(() => {
+              this.count++;
+              console.log(this.count);
+            }, 1000);
+          }
+          
+          const counter = new Counter();
+          //IIFE (Immediately Invoked Function Expression)
+          (function(name) {
+            console.log('Hello, ' + name + '!');
+          })('John');
+          //Higher order function example 
+          function map(array, transformFunction) {
+            const result = [];
+            for (let i = 0; i < array.length; i++) {
+              result.push(transformFunction(array[i]));
+            }
+            return result;
+          }
+          
+          // Function to double each element in an array
+          function double(x) {
+            return x * 2;
+          }
+          
+          const numbers = [1, 2, 3, 4, 5];
+          
+          // Using map function with the double function
+          const doubledNumbers = map(numbers, double);
+          
+          console.log(doubledNumbers); 
+          
+
+          //Constructor function
+          function Person(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+          
+            this.getFullName = function() {
+              return this.firstName + ' ' + this.lastName;
+            };
+          }
+          
+          // Creating new instances of Person
+          var person1 = new Person('Ja', 'tim', 30);
+          var person2 = new Person('Ji', 'Sm', 25);
+          
+          console.log(person1.firstName); 
+          console.log(person2.lastName);
+          
+          console.log(person1.getFullName()); 
+          console.log(person2.getFullName()); 
+
+    </script>
+    
+</body>
+</html>
