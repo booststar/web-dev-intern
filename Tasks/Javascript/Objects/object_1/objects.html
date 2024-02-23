@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //example-01
+    //object creation
+        const obj={
+    cName:"Booststar",
+    batch:"pune batch",
+    studentNo:6,
+    noofDays:45,
+    sartringDate:18/1/2024,
+    domain:"web_Devvelopment"
+    }; 
+    console.log(obj);
+    console.log("accesing by .  ----  "+"Batch name :"+obj.batch); //accesing by dot(.)
+    console.log(obj["domain"] , typeof(obj.domain));                    //accesing without dot
+    console.log(`name of company: ${obj.cName}`);
+    console.log(` numbers of days  before -----------    noofDays: ${obj.noofDays}`);
+    obj.noofDays= obj.noofDays+15;             //can update variables
+    console.log(`numbers of days  after -----------     noofDays: ${obj.noofDays}`);
+
+    console.log(`_________________________________________________________________________________`);
+//example-02
+    const instaProfile ={
+        id:"travel_with_me",
+        isfollow:false,
+        followers: 200,
+        following:180,
+        follow:function(){
+            if(this.isfollow != true)
+            {console.log(`follow my page---- ${this.id} for more content !!!`);}
+        }
+    };
+    console.log(instaProfile);
+    console.log(`key 1:  followers  value :${instaProfile["followers"]}\nkey 2:  followings  value : ${instaProfile["following"]} `);
+    instaProfile.follow();
+    console.log(`_________________________________________________________________________________`);
+
+
+    
+//example-03
+    const product ={
+        pName : "Parker Jotter standard CT Ball pen",
+        color : "black", 
+        rating: 4,             //rating from 1 - 5 
+        // prize:270,
+        isoffer : true,
+        offer : function(prize){
+            if(this.isoffer == true)
+            {this.offerValue = prize *0.5;  // 50% offer on prize
+            console.log(`the original prize of product is :${prize}\noffer prize of product is : ${this.offerValue} `)}
+            else{
+            console.log(`sorry !!  no offer is on :${this.pName}   product `)
+        }
+        }
+        
+     };
+     console.log(product);
+     console.log("product name is :",product.pName);
+     console.log("color  :",product.color);
+     product.offer(500);
+     product.isoffer = false;
+     product.offer(500);
+     console.log(`_________________________________________________________________________________`);
+
+// exaple -04  ---- object constructor 
+     function restorant( distance,ratings,fDish ){
+        this.distance = distance;
+        this.ratings =ratings;                        //here we can use the same name of storing values and the parameters   
+        this.fDish = fDish;                           // this.distance - will store the  current new value  given by the function  & 
+                                                    // the  = distance - is the parameter of the function 
+         if (distance <= 2){
+            console.log(`ready to eat ${this.fDish} , its very near from you just ${this.distance}km away from you !!`)
+         }                                           
+     }
+     console.log(restorant);
+     let customer1 = new restorant(5,4,"PavBhaji");
+     console.log(`restorant details for 1st customer \n distace : ${customer1.distance}km , ratings : ${customer1.ratings}, Famous_Dish is : ${customer1.fDish} `);
+     let customer2 = new restorant(2 ,3.4, "momos");
+    // customer1 = new restorant(2 ,3.4, "momos");
+     console.log(`restorant details for 2nd customer \n distace : ${customer2.distance}km , ratings : ${customer2.ratings}, Famous_Dish is : ${customer2.fDish} `);
+     console.log(`_________________________________________________________________________________`);
+
+     
+//example -05 
+     const railResvation = {
+        railwayStation : "Pune",
+        date: "17 march 2024",
+        submit : function()
+        {
+            console.log(`${this.name} + "your form is submitted to train no  : ${this.trainNo}`);
+        },
+        cancel :function()
+        {
+            alert(`${this.name }"your form is canclled to train no  :${this.trainNo}`)
+        },
+        fillInfo :function( name ,trainNo){
+            this.name =name;
+            this.trainNo= trainNo ;
+        }
+     }
+     console.log(railResvation);
+    railResvation.fillInfo("Booststar" , 111301);
+    // railResvation.fillInfo("sham kumar",213510);
+    railResvation.submit();
+    railResvation.cancel();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
